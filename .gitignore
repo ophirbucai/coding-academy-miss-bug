@@ -1,2 +1,7 @@
-node_modules
+# IDE
 .idea
+
+# Node
+client/node_modules
+client/.vite
+server/node_modules

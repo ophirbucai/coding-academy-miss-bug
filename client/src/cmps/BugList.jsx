@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { BugPreview } from './BugPreview'
+import { BugPreview } from './BugPreview.jsx'
 
 export function BugList({ bugs, onRemoveBug, onEditBug }) {
     return (
