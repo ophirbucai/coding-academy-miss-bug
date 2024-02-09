@@ -2,8 +2,7 @@
 .idea
 
 # Node
-client/node_modules
-server/node_modules
+node_modules
 
-# Build
+# Client / Build
 client/.vite
