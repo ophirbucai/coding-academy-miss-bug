@@ -8,5 +8,5 @@ app.get('/api', (req, res) => {
     res.send('Hello there')
 })
 app.listen(PORT, () => {
-    console.log('Server ready at port 3030')
+    console.log(`Server ready at port ${PORT}`)
 })
