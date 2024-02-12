@@ -9,3 +9,6 @@ packages/server/public
 
 # Logs
 packages/server/logs
+
+# Database
+packages/server/data
