@@ -1,8 +1,11 @@
-# React + Vite
+# Bug 🪲
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A project to monitor bugs using a simple project using MERN stack and NPM workspaces for CI/CD.
 
-Currently, two official plugins are available:
+## Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Begin by running `npm install` to install the necessary client and server packages, along with the dev dependencies specified in the root `package.json`. These dependencies are crucial for executing parallel scripts during development.
+
+2. Execute `npm run dev`. This script triggers all scripts listed in the root directory using the CLI command `run-p`, simultaneously running the scripts prefixed with `dev:*`.
+
+3. To deploy the application, utilize `npm run start`. This command will trigger the `predeploy` script, initializing the client build script. Upon completion, static files will be generated in the `server/public` directory.

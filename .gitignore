@@ -1,2 +1,8 @@
-node_modules
+# IDE
 .idea
+
+# Node
+node_modules
+
+# Build
+packages/server/public
