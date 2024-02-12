@@ -6,3 +6,6 @@ node_modules
 
 # Build
 packages/server/public
+
+# Logs
+packages/server/logs
