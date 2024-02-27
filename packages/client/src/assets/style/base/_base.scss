@@ -3,11 +3,14 @@
 }
 
 html {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 body {
     margin: 0;
     color: var(--gray3);
+    font-family: Gilroy, Inter, sans-serif;
 }
 
 h1,
