@@ -1,18 +1,15 @@
 import express from 'express'
-import { addBug, addBugMsg, getBug, getBugs, removeBug, removeBugMsg, updateBug } from './bug.controller.js'
-import { log } from '../../middlewares/logger.middleware.js'
-import { requireAuth } from '../../middlewares/requireAuth.middleware.js'
+import { addBug, getBug, getBugs, removeBug, updateBug, avoidDupRequests } from './bug.controller.js'
+import { log } from '../../middlewares/log.middleware.js'
+import { authorize } from '../../middlewares/authorize.middleware.js'
 
 const router = express.Router()
 
-
-router.get('/', log, getBugs)
-router.get('/:bugId', getBug)
-router.delete('/:bugId', log, requireAuth, removeBug)
-router.post('/', requireAuth, addBug)
-router.put('/', requireAuth, updateBug)
-
-router.post('/:bugId/msg', requireAuth, addBugMsg)
-router.delete('/:bugId/msg/:msgId', requireAuth, removeBugMsg)
+router.use(log.info((req) => `Bug request made: ${req.url}`))
+router.get('/', getBugs)
+router.get('/:bugId', avoidDupRequests, getBug)
+router.post('/', authorize.user, addBug)
+router.put('/', authorize.user, updateBug)
+router.delete('/:bugId', authorize.user, removeBug)
 
 export const bugRoutes = router
