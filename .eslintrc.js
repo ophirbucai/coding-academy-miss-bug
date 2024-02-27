@@ -1,50 +1,50 @@
 module.exports = {
-    'env': {
-        'es2021': true,
+  'env': {
+    'es2021': true,
+    'node': true
+  },
+  'extends': [
+    'eslint:recommended',
+    'prettier'
+  ],
+  'overrides': [
+    {
+      'env': {
         'node': true
-    },
-    'extends': [
-        'eslint:recommended',
-        'prettier'
+      },
+      'files': [
+        '.eslintrc.{js,cjs}'
+      ],
+      'parserOptions': {
+        'sourceType': 'script'
+      }
+    }
+  ],
+  'parserOptions': {
+    'ecmaVersion': 'latest',
+    'sourceType': 'module'
+  },
+  'rules': {
+    'indent': [
+      'error',
+      2
     ],
-    'overrides': [
-        {
-            'env': {
-                'node': true
-            },
-            'files': [
-                '.eslintrc.{js,cjs}'
-            ],
-            'parserOptions': {
-                'sourceType': 'script'
-            }
-        }
+    'linebreak-style': [
+      'error',
+      'unix'
     ],
-    'parserOptions': {
-        'ecmaVersion': 'latest',
-        'sourceType': 'module'
-    },
-    'rules': {
-        'indent': [
-            'error',
-            4
-        ],
-        'linebreak-style': [
-            'error',
-            'unix'
-        ],
-        'quotes': [
-            'error',
-            'single',
-            { allowTemplateLiterals: true }
-        ],
-        'semi': [
-            'error',
-            'never'
-        ],
-        'object-curly-spacing': ['error', 'always']
-    },
-    ignorePatterns: [
-        'packages/server/public'
-    ]
+    'quotes': [
+      'error',
+      'single',
+      { allowTemplateLiterals: true }
+    ],
+    'semi': [
+      'error',
+      'never'
+    ],
+    'object-curly-spacing': ['error', 'always']
+  },
+  ignorePatterns: [
+    'packages/server/public'
+  ]
 }
